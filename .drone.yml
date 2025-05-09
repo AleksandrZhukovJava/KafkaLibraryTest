@@ -3,7 +3,7 @@ type: docker
 name: default
 
 steps:
-  - name: build
-    image: maven:3.9.6-eclipse-temurin-17
+  - name: hello
+    image: alpine
     commands:
-      - mvn clean install
+      - echo "Hello from Drone!"
