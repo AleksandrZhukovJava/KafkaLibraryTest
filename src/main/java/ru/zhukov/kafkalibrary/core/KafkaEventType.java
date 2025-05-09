@@ -1,4 +1,4 @@
-package ru.zhukov.kafkalibrary.kafka;
+package ru.zhukov.kafkalibrary.core;
 
 public enum KafkaEventType {
     ORDER

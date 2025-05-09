@@ -1,4 +1,4 @@
-package ru.zhukov.kafkalibrary.kafka;
+package ru.zhukov.kafkalibrary.core;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

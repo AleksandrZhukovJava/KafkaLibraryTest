@@ -1,4 +1,4 @@
-package ru.zhukov.kafkalibrary.kafka;
+package ru.zhukov.kafkalibrary.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,11 +7,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import ru.zhukov.kafkalibrary.core.KafkaEvent;
 
 import java.time.Instant;
 import java.util.UUID;
 
-import static ru.zhukov.kafkalibrary.kafka.KafkaEventType.ORDER;
+import static ru.zhukov.kafkalibrary.core.KafkaEventType.ORDER;
 
 @Getter
 @Setter
