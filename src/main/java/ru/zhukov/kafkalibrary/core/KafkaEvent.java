@@ -1,23 +1,19 @@
 package ru.zhukov.kafkalibrary.core;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.util.UUID;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public abstract class KafkaEvent {
-    private KafkaEventType type;
-    private UUID aggregateId;
+public abstract class KafkaEvent<T> {
+    private final T type;
+    private UUID id;
     private Instant dateCreated;
 
-    public KafkaEvent(KafkaEventType type, UUID aggregateId) {
+    public KafkaEvent(T type) {
         this.type = type;
-        this.aggregateId = aggregateId;
+        this.id = UUID.randomUUID();
         this.dateCreated = Instant.now();
     }
 }
