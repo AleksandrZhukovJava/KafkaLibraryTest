@@ -10,7 +10,7 @@
     </parent>
     <groupId>ru.zhukov</groupId>
     <artifactId>kafka-library</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>KafkaLibrary</name>
     <description>KafkaLibrary</description>
 

@@ -21,11 +21,11 @@ public class OrderCreateEvent extends OrderEvent {
     public int itemAmount;
 
     @Builder
-    public OrderCreateEvent(UUID aggregateId,
+    public OrderCreateEvent(UUID orderId,
                             String customerName,
                             Instant orderDateCreated,
                             int itemAmount) {
-        super(ORDER_CREATE, aggregateId);
+        super(ORDER_CREATE, orderId);
         this.customerName = customerName;
         this.orderDateCreated = orderDateCreated;
         this.itemAmount = itemAmount;
