@@ -3,7 +3,7 @@ name: Deploy to Nexus
 on:
   push:
     branches:
-      - master  # деплой будет происходить при пуше в master или при мердже в master
+      - master
 
 jobs:
   deploy:
@@ -20,7 +20,4 @@ jobs:
           java-version: '17'
 
       - name: Build and deploy
-        run: mvn clean deploy  # сборка и деплой артефактов
-        env:
-          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+        run: mvn clean deploy -s C:\Users\dc_ev\.m2-test\settings.xml
