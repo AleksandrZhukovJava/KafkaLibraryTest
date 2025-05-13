@@ -21,3 +21,21 @@ jobs:
 
       - name: Run tests with Maven
         run: mvn test
+
+      - name: Upload test results as a check
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: checkRun } = await github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'Run Tests',
+              head_sha: context.payload.pull_request.head.sha,
+              status: 'completed',
+              conclusion: 'success',
+              output: {
+                title: 'Test Results',
+                summary: 'Test results summary',
+                text: 'Всё збс!'
+              }
+           });
