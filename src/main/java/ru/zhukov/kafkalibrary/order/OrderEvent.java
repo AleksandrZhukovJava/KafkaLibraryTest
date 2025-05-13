@@ -19,4 +19,8 @@ public class OrderEvent extends KafkaEvent<OrderEventType> {
         super(type);
         this.orderId = orderId;
     }
+
+    public OrderEvent(OrderEventType type) {
+        super(type);
+    }
 }

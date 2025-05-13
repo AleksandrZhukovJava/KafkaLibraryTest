@@ -30,4 +30,8 @@ public class OrderCreateEvent extends OrderEvent {
         this.orderDateCreated = orderDateCreated;
         this.itemAmount = itemAmount;
     }
+
+    public OrderCreateEvent() {
+        super(ORDER_CREATE);
+    }
 }
