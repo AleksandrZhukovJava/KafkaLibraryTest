@@ -21,3 +21,20 @@ jobs:
 
       - name: Build and deploy
         run: mvn clean deploy -s C:\Users\dc_ev\.m2-test\settings.xml
+
+      - name: Bump patch version in pom.xml
+        run: |
+          CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          
+          echo "Current version: $CURRENT_VERSION"
+          
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+          NEXT_VERSION="$MAJOR.$MINOR.$((PATCH + 1))"
+          
+          echo "Next version: $NEXT_VERSION"
+          
+          mvn versions:set -DnewVersion=$NEXT_VERSION
+          mvn versions:commit
+
+      - name: Show bumped version
+        run: mvn help:evaluate -Dexpression=project.version -q -DforceStdout
