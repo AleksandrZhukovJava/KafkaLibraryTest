@@ -24,15 +24,23 @@ jobs:
 
       - name: Bump patch version in pom.xml
         run: |
-          CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          # Get the current version from pom.xml
+          $CURRENT_VERSION = $(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           
-          echo "Current version: $CURRENT_VERSION"
+          Write-Host "Current version: $CURRENT_VERSION"
           
-          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
-          NEXT_VERSION="$MAJOR.$MINOR.$((PATCH + 1))"
+          # Split version into MAJOR, MINOR, PATCH
+          $versionParts = $CURRENT_VERSION -split '\.'
+          $MAJOR = $versionParts[0]
+          $MINOR = $versionParts[1]
+          $PATCH = $versionParts[2]
           
-          echo "Next version: $NEXT_VERSION"
+          # Calculate next version
+          $NEXT_VERSION = "$MAJOR.$MINOR." + ($PATCH + 1)
           
+          Write-Host "Next version: $NEXT_VERSION"
+          
+          # Set new version in pom.xml
           mvn versions:set -DnewVersion=$NEXT_VERSION
           mvn versions:commit
 
