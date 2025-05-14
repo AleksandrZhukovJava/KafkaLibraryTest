@@ -18,31 +18,3 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
-      - name: Build and deploy
-        run: mvn clean deploy -s C:\Users\dc_ev\.m2-test\settings.xml
-
-      - name: Bump patch version in pom.xml
-        run: |
-          # Get the current version from pom.xml
-          $CURRENT_VERSION = $(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          
-          Write-Host "Current version: $CURRENT_VERSION"
-          
-          # Split version into MAJOR, MINOR, PATCH
-          $versionParts = $CURRENT_VERSION -split '\.'
-          $MAJOR = $versionParts[0]
-          $MINOR = $versionParts[1]
-          $PATCH = $versionParts[2]
-          
-          # Calculate next version
-          $NEXT_VERSION = "$MAJOR.$MINOR." + ($PATCH + 1)
-          
-          Write-Host "Next version: $NEXT_VERSION"
-          
-          # Set new version in pom.xml
-          mvn versions:set -DnewVersion=$NEXT_VERSION
-          mvn versions:commit
-
-      - name: Show bumped version
-        run: mvn help:evaluate -Dexpression=project.version -q -DforceStdout
