@@ -9,7 +9,7 @@
     </parent>
     <groupId>ru.zhukov</groupId>
     <artifactId>kafka-library</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.8</version>
     <name>KafkaLibrary</name>
     <description>KafkaLibrary</description>
 
@@ -28,7 +28,7 @@
         <connection>scm:git:https://github.com/AleksandrZhukovJava/KafkaLibraryTest.git</connection>
         <developerConnection>scm:git:https://github.com/AleksandrZhukovJava/KafkaLibraryTest.git</developerConnection>
         <url>https://github.com/AleksandrZhukovJava/KafkaLibraryTest</url>
-        <tag>HEAD</tag>
+        <tag>v1.0.8</tag>
     </scm>
 
     <dependencies>
