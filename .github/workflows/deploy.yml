@@ -18,3 +18,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+
+      - name: Prepare and perform release
+        run: mvn release:prepare release:perform -B
