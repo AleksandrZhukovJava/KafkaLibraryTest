@@ -15,8 +15,8 @@
 
     <distributionManagement>
         <repository>
-            <id>kafka-library</id>
-            <url>http://localhost:8081/repository/kafka-library/</url>
+            <id>test-services</id>
+            <url>http://localhost:8081/repository/test-services/</url>
         </repository>
     </distributionManagement>
 
