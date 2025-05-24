@@ -1,4 +1,4 @@
-package ru.zhukov.kafkalibrary.order;
+package ru.zhukov.kafkalibrary.child;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,15 +12,15 @@ import java.util.UUID;
 @Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class OrderEvent extends KafkaEvent<OrderEventType> {
-    public UUID orderId;
+public class ChildEvent extends KafkaEvent<ChildEventType> {
+    public UUID childId;
 
-    public OrderEvent(OrderEventType type, UUID orderId) {
+    public ChildEvent(ChildEventType type, UUID childId) {
         super(type);
-        this.orderId = orderId;
+        this.childId = childId;
     }
 
-    public OrderEvent(OrderEventType type) {
+    public ChildEvent(ChildEventType type) {
         super(type);
     }
 }
