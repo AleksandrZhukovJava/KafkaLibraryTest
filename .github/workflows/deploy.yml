@@ -35,8 +35,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-#      - name: Pull latest changes
-#        run: git pull --rebase origin master
+      - name: Pull latest changes
+        run: git pull --rebase origin master
 
       - name: Prepare and perform release
         run: mvn release:prepare release:perform -B -s /root/.m2/settings.xml
