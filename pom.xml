@@ -9,14 +9,14 @@
     </parent>
     <groupId>ru.zhukov</groupId>
     <artifactId>kafka-library</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
     <name>KafkaLibrary</name>
     <description>KafkaLibrary</description>
 
     <distributionManagement>
         <repository>
             <id>test-services</id>
-            <url>http://localhost:8081/repository/slp-services/</url>
+            <url>http://nexus:8081/repository/slp-services/</url>
         </repository>
     </distributionManagement>
 
