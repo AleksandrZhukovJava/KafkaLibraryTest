@@ -39,4 +39,4 @@ jobs:
         run: git pull --rebase origin master
 
       - name: Prepare and perform release
-        run: mvn release:prepare release:perform -B -s /root/.m2/settings.xml
+        run: mvn release:prepare release:perform -B -s /root/.m2/slp-settings.xml
