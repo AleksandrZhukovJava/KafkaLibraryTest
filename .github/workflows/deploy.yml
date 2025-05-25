@@ -17,6 +17,8 @@ jobs:
         run: |
           git config --global user.name "CI Bot"
           git config --global user.email "ci-bot@example.com"
+          git config --global credential.helper store
+          echo "https://x-access-token:${{ secrets.SLP_GITHUB_TOKEN }}@github.com" > ~/.git-credentials
 
 #      - name: Cache Maven packages
 #        uses: actions/cache@v3
