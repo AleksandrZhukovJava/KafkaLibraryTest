@@ -13,14 +13,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set Git identity
+        run: |
+          git config --global user.name "CI Bot"
+          git config --global user.email "ci-bot@example.com"
+
+#      - name: Cache Maven packages
+#        uses: actions/cache@v3
+#        with:
+#          path: |
+#            ~/.m2/repository
+#          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-maven-
+
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Pull latest changes
-        run: git pull --rebase origin master
+#      - name: Pull latest changes
+#        run: git pull --rebase origin master
 
       - name: Prepare and perform release
         run: mvn release:prepare release:perform -B -s /root/.m2/settings.xml
