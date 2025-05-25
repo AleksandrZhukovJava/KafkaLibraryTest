@@ -25,9 +25,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/AleksandrZhukovJava/kafka-library.git</connection>
-        <developerConnection>scm:git:https://github.com/AleksandrZhukovJava/kafka-library.git</developerConnection>
-        <url>https://github.com/AleksandrZhukovJava/kafka-library</url>
+        <connection>scm:git:https://github.com/SpeechPathologistOrganization/kafka-library.git</connection>
+        <developerConnection>scm:git:https://github.com/SpeechPathologistOrganization/kafka-library.git</developerConnection>
+        <url>https://github.com/SpeechPathologistOrganization/kafka-library</url>
         <tag>HEAD</tag>
     </scm>
 
